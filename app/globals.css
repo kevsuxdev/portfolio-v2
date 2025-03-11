@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f9f2de;
+  --foreground: #0a0d0b;
+}
+
+html,
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-background rounded-full;
+}
+
+.animate-oval-gradient {
+  animation: gradientOvalAnimation linear 5s infinite alternate;
+}
+
+.fill-button {
+  @apply font-medium text-sm bg-foreground text-background rounded-lg p-2 px-8 text-center border-transparent duration-200;
+}
+
+.outline-button {
+  @apply font-medium text-sm border border-foreground hover:bg-foreground hover:text-background rounded-lg p-2 px-8 text-center duration-200;
+}
+
+@keyframes gradientOvalAnimation {
+  from {
+    border-radius: 20% 50% 80% 20%;
+  }
+  to {
+    border-radius: 50% 40% 60% 100%;
+  }
+}
