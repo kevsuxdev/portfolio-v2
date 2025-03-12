@@ -4,7 +4,7 @@ import { GoBookmark } from 'react-icons/go'
 import { GrContactInfo } from 'react-icons/gr'
 import { LiaProjectDiagramSolid } from 'react-icons/lia'
 import { GrContact } from "react-icons/gr";
-
+import { AiOutlineSend } from "react-icons/ai";
 
 export const icons = {
   FaFacebook,
@@ -15,5 +15,6 @@ export const icons = {
   GrContactInfo,
   LiaProjectDiagramSolid,
   GrContact,
-  IoVideocamOutline
+  IoVideocamOutline,
+  AiOutlineSend
 }
