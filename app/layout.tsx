@@ -21,7 +21,7 @@ const robotoFlex = Roboto_Flex({
 export const metadata: Metadata = {
   title: 'Kevs Dev',
   description: 'The best front-end developer all over the town!',
-  icons: '/next.svg',
+  icons: '/logo.png',
 }
 
 export default function RootLayout({
