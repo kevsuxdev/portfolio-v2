@@ -4,6 +4,7 @@ import React from 'react'
 import { icons } from '@/constant/icons'
 import CallToAction from '@/components/CallToAction'
 import { motion } from 'framer-motion'
+import { ToastContainer } from 'react-toastify'
 
 const HomePage = () => {
   return (
@@ -30,13 +31,13 @@ const HomePage = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className='flex items-start gap-5 flex-col'
+            className='flex items-center justify-center lg:items-start gap-5 flex-col'
           >
-            <p className='text-sm font-bold text-blue-800 tracking-wide flex items-center justify-start gap-2'>
-              <icons.FaRankingStar className='text-xl' />
+            <p className='text-xs lg:text-sm font-bold text-blue-800 tracking-wide flex items-center justify-start gap-2'>
+              <icons.FaRankingStar className='text-lg lg:text-xl' />
               Freelancer
             </p>
-            <h1 className='text-5xl font-bold capitalize'>
+            <h1 className='text-3xl lg:text-5xl font-bold capitalize'>
               I Serve as expected
             </h1>
           </motion.div>
@@ -46,7 +47,7 @@ const HomePage = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className='text-[16px] text-center w-[67%]'
+            className='text-[13px] lg:text-[16px] md:text-[15px] text-center md:w-[80%] xl:w-[67%] px-3 lg:px-0'
           >
             Hi there! I&apos;m Kevin Romero, a{' '}
             <span className='text-blue-800 capitalize font-bold border-blue-500'>
@@ -56,6 +57,7 @@ const HomePage = () => {
             tailored to the needs of clients.
           </motion.p>
           <motion.div
+            className='z-20'
             variants={{
               hidden: { scale: 0 },
               visible: { scale: 1 },
@@ -64,13 +66,14 @@ const HomePage = () => {
           >
             <CallToAction
               title='View Projects'
-              className='mt-2'
+              className='mt-2 !text-xs lg:text-sm '
               icon={icons.LiaProjectDiagramSolid}
               href='/project'
             />
           </motion.div>
         </motion.article>
       </section>
+      <ToastContainer />
     </PageLayout>
   )
 }

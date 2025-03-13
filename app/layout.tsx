@@ -3,6 +3,8 @@ import { Roboto_Flex, Poppins } from 'next/font/google'
 import './globals.css'
 import GradientOval from '@/components/GradientOval'
 import NavigationBar from '@/components/NavigationBar'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/ReactToastify.css'
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -27,6 +29,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+
   return (
     <html lang='en'>
       <body
@@ -37,6 +40,7 @@ export default function RootLayout({
           {children}
         </main>
         <GradientOval />
+        <ToastContainer />
       </body>
     </html>
   )
