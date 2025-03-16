@@ -2,7 +2,7 @@ import React, { ChangeEvent, FC } from 'react'
 
 interface TextField {
   label: string
-  type: 'password' | 'text'
+  type: 'password' | 'text' | 'email'
   placeholder: string
   name: string
   handleOnChange: (event: ChangeEvent<HTMLInputElement>) => void
@@ -17,7 +17,7 @@ const InputField: FC<TextField> = ({
 }) => {
   return (
     <article className='flex items-start flex-col gap-1 w-full'>
-      <label className='font-medium text-sm'>{label}</label>
+      <label className='font-medium text-xs lg:text-sm'>{label}</label>
       <input
         type={type}
         placeholder={placeholder}

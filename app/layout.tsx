@@ -5,6 +5,7 @@ import GradientOval from '@/components/GradientOval'
 import NavigationBar from '@/components/NavigationBar'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/ReactToastify.css'
+import { AnimatePresence } from 'framer-motion'
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -21,7 +22,7 @@ const robotoFlex = Roboto_Flex({
 export const metadata: Metadata = {
   title: 'Kevs Dev',
   description: 'The best front-end developer all over the town!',
-  icons: '/logo.png',
+  icons: '/next.svg',
 }
 
 export default function RootLayout({
@@ -29,7 +30,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-
   return (
     <html lang='en'>
       <body
@@ -37,7 +37,7 @@ export default function RootLayout({
       >
         <NavigationBar />
         <main className='max-h-screen overflow-x-hidden overflow-y-auto w-full'>
-          {children}
+          <AnimatePresence>{children}</AnimatePresence>
         </main>
         <GradientOval />
         <ToastContainer />

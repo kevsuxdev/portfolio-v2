@@ -103,7 +103,7 @@ const ContactPage = () => {
               <InputField
                 label='Email Address'
                 placeholder='e.g., johndoe@example.com'
-                type='text'
+                type='email'
                 name='email'
                 handleOnChange={(event) =>
                   setFormData({ ...formData, email: event.target.value })
@@ -111,7 +111,7 @@ const ContactPage = () => {
               />
             </article>
             <article className='flex items-start flex-col gap-1 w-full'>
-              <label className='font-medium text-sm'>Message</label>
+              <label className='font-medium text-xs lg:text-sm'>Message</label>
               <textarea
                 placeholder='I’d love to hear your thoughts! '
                 name='message'

@@ -5,7 +5,6 @@ import { icons } from '@/constant/icons'
 import CallToAction from '@/components/CallToAction'
 import { motion } from 'framer-motion'
 import { ToastContainer } from 'react-toastify'
-
 const HomePage = () => {
   return (
     <PageLayout pageName='Home'>

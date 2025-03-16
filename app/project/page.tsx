@@ -1,13 +1,15 @@
 'use client'
 import PageLayout from '@/components/PageLayout'
 import { projects } from '@/constant/projects'
-import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { icons } from '@/constant/icons'
 import { hiddenAnimation } from '@/constant/animationVariant'
+import ProjectTechnology from '@/components/ProjectTechnology'
+import RequestDemoButton from '@/components/RequestDemoButton'
+import RequestDemoModal from '@/components/RequestDemoModal'
 
 const ProjectPage = () => {
+  const [openRequestModal, setOpenRequestModal] = useState<number | null>(null)
   return (
     <PageLayout pageName='Project' className='px-5'>
       <motion.section
@@ -31,32 +33,38 @@ const ProjectPage = () => {
               <div className='flex flex-col gap-3 w-full'>
                 <div className='flex items-center justify-between'>
                   <h1 className='text-lg font-bold tracking-wide'>{name}</h1>
-                  <button className='fill-button items-center gap-2 !text-xs tracking-wide !px-4 !bg-blue-500 active:scale-90 hidden lg:flex'>
-                    Request Demo
-                    <icons.IoVideocamOutline className='text-lg' />
-                  </button>
+                  <RequestDemoButton
+                    onClick={() => setOpenRequestModal(index)}
+                    className='hidden lg:flex'
+                  />
                 </div>
                 <p className='text-sm lg:w-2/3 text-justify'>{description}</p>
               </div>
-              <h1 className='font-medium mt-3 text-sm w-full'>Techonologies:</h1>
+              <h1 className='font-medium mt-3 text-sm w-full'>
+                Techonologies:
+              </h1>
               <div className='flex items-center gap-2 flex-wrap w-full'>
                 {technologies.map((technology, techIndex) => {
                   const { title, image } = technology
                   return (
-                    <div
+                    <ProjectTechnology
                       key={techIndex}
-                      className='border rounded-lg border-black w-fit flex items-center gap-2 px-4 py-2'
-                    >
-                      <h1 className='text-xs font-medium'>{title}</h1>
-                      <Image src={image} alt='Node JS' width={20} />
-                    </div>
+                      image={image}
+                      title={title}
+                    />
                   )
                 })}
               </div>
-              <button className='fill-button flex items-center gap-2 !text-xs tracking-wide !px-4 !bg-blue-500 active:scale-90 z-10 lg:hidden'>
-                Request Demo
-                <icons.IoVideocamOutline className='text-lg' />
-              </button>
+              <RequestDemoButton
+                onClick={() => setOpenRequestModal(index)}
+                className='flex lg:hidden'
+              />
+              {openRequestModal === index && (
+                <RequestDemoModal
+                  title={name}
+                  onClose={() => setOpenRequestModal(null)}
+                />
+              )}
             </motion.article>
           )
         })}

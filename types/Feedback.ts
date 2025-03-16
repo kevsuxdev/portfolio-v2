@@ -3,3 +3,9 @@ export interface Feedback {
   email: string
   feedback: string
 }
+
+export interface DemoRequest {
+  project: string
+  email: string
+  reason: string
+}
