@@ -6,6 +6,7 @@ import NavigationBar from '@/components/NavigationBar'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/ReactToastify.css'
 import { AnimatePresence } from 'framer-motion'
+import { Analytics } from '@vercel/analytics/next'
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -39,6 +40,7 @@ export default function RootLayout({
         <main className='max-h-screen overflow-x-hidden overflow-y-auto w-full'>
           <AnimatePresence>{children}</AnimatePresence>
         </main>
+        <Analytics />
         <GradientOval />
         <ToastContainer />
       </body>
