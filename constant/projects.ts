@@ -24,4 +24,14 @@ export const projects: ProjectDetail[] = [
       { id: 3, title: 'Tailwind', image: images.tailwind },
     ],
   },
+  {
+    id: 3,
+    name: 'Balita PH',
+    description: 'Balita PH is a Mobile Application that delivers the latest and trending news in the Philippines. With a clean and user-friendly interface, it keeps you updated on current events, politics, entertainment, and more in real time.',
+    technologies: [
+      { id: 1, title: 'React Native', image: images.reactnative },
+      { id: 2, title: 'Supabase', image: images.supabase },
+      { id: 3, title: 'NativeWind', image: images.nativewind },
+    ],
+  },
 ]

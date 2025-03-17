@@ -9,7 +9,7 @@ const ProjectTechnology = ({
   title: string
 }) => {
   return (
-    <div className='border rounded-lg border-black w-fit flex items-center gap-2 px-4 py-2'>
+    <div className='border rounded-lg border-black w-fit flex items-center gap-2 px-4 py-2 h-10'>
       <h1 className='text-xs font-medium'>{title}</h1>
       <Image src={image} alt='Node JS' width={20} />
     </div>
