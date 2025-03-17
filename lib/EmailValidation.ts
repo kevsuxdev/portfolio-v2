@@ -6,12 +6,11 @@ const { MAILBOXLAYER_API_KEY } = process.env
 
 export const isEmailExist = async (email: string) => {
   try {
-    const response = await axios.get('https://apilayer.net/api/check', {
+    const response = await axios.get('http://apilayer.net/api/check', {
       params: {
         access_key: MAILBOXLAYER_API_KEY,
         email: email,
         smtp: 1,
-        format: 1,
       },
     })
 
@@ -23,6 +22,9 @@ export const isEmailExist = async (email: string) => {
 
     return false
   } catch (error) {
-    return { success: false, message: 'Validating email address error' + error} as EndingResponse
+    return {
+      success: false,
+      message: 'Validating email address error' + error,
+    } as EndingResponse
   }
 }
