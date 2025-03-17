@@ -23,7 +23,7 @@ const robotoFlex = Roboto_Flex({
 export const metadata: Metadata = {
   title: 'Kevs Dev',
   description: 'The best front-end developer all over the town!',
-  icons: '/next.svg',
+  icons: '/logo.svg',
 }
 
 export default function RootLayout({
@@ -40,7 +40,7 @@ export default function RootLayout({
         <main className='max-h-screen overflow-x-hidden overflow-y-auto w-full'>
           <AnimatePresence>{children}</AnimatePresence>
         </main>
-        <Analytics />
+        <Analytics/>
         <GradientOval />
         <ToastContainer />
       </body>
